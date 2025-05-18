@@ -2,20 +2,32 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>梅田スタバ多すぎ問題</title>
+  <title>Leaflet テスト</title>
 
-<!-- ヘッダに Leaflet の CSS と JS を追加 -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Leaflet の CSS／JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
+  <!-- ビューポート -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body { margin:0; }
+    /* 地図を表示するため高さ必須！ */
+    #map { height: 100vh; }
+  </style>
 </head>
-
 <body>
-  <h1>梅田スタバ多すぎ問題</h1>
-  <p>GitHub Pages デビューおめでとう🎉</p>
+  <div id="map"></div>
 
-  <div id="map" style="height:70vh;"></div>
-<script src="script.js"></script>
-
+  <!-- 地図を初期化するだけの最小スクリプト -->
+  <script>
+    // ページ読み込み完了後に実行
+    document.addEventListener('DOMContentLoaded', () => {
+      const map = L.map('map').setView([34.702, 135.496], 15);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+    });
+  </script>
 </body>
 </html>
