@@ -20,14 +20,14 @@
   <div id="map"></div>
 
   <!-- 地図を初期化するだけの最小スクリプト -->
-  <script>
-    // ページ読み込み完了後に実行
-    document.addEventListener('DOMContentLoaded', () => {
-      const map = L.map('map').setView([34.702, 135.496], 15);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
-      }).addTo(map);
-    });
-  </script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const map = L.map('map').setView([34.702, 135.496], 15);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+  });
+</script>
+
 </body>
 </html>
